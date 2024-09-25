@@ -51,11 +51,11 @@ class Matrix(object):
         string = " "
         for i in range(self.shape[0]):
             if self.shape[1] > 1:
-                string += "[ "
+                string += "["
                 string += " ".join(str(self.value[i][j]) for j in range(self.shape[1]))
-                string += " ]\n  " if i < self.shape[0] - 1 else " ]\n\n"
+                string += "]\n " if i < self.shape[0] - 1 else "]\n\n"
             else:
-                string += "[ " + str(self.value[i]) + " ]\n  " if i < self.shape[0] - 1 else str(self.value[i]) + " "
+                string += "[" + str(self.value[i]) +"]\n  " if i < self.shape[0] - 1 else str(self.value[i]) + " "
         return string
 
 mat = Matrix(dim=(3, 8))
