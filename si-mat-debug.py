@@ -8,14 +8,14 @@ class Matrix(object):
             value = []
         if isinstance(value, list):
             if len(value) > 0:
-                if  type(value[0]) is int or type(value[0]) is float:
-                     row = (int, float)
+                if type(value[0]) is int or type(value[0]) is float:
+                    row = (int, float)
                 else:
                     row = type(value[0])
                 for i in value:
                     if not isinstance(i, (int, float, list)):
                         raise RuntimeError("Matrix is invalid. Please ensure that all elements share a type.")
-                if row in list:
+                if isinstance(value[0], list):
                     lenInner = len(value[0])
                     for i in value:
                         if len(i) != lenInner:
@@ -35,7 +35,7 @@ class Matrix(object):
                     row = []
                     for j in range(dim[1]):
                         row.append(1)
-                        matrix.append(row)
+                    matrix.append(row)
 
                     self.value = matrix
                     self.shape = dim
@@ -55,6 +55,6 @@ class Matrix(object):
                 string += "[" + str(self.value[i]) +"]\n  " if i < self.shape[0] - 1 else str(self.value[i]) + " "
         return string
 
-mat = Matrix(dim=(10, 10))
+mat = Matrix(dim=(2, 2))
 print(mat)
 #print(type(mat))
