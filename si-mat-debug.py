@@ -26,22 +26,22 @@ class Matrix(object):
                 self.value = value
                 self.shape = (len(value), len(value[0]) if value else 0)
 
-                try:
-                    self.shape = (len(value), len(value[0]))
-                except:
-                    self.shape = (len(value), 1)
-                matrix = []
-                for i in range(dim[0]):
-                    row = []
-                    for j in range(dim[1]):
-                        row.append(1)
+            try:
+                self.shape = (len(value), len(value[0]))
+            except:
+                self.shape = (len(value), 1)
+            matrix = []
+            for i in range(dim[0]):
+                row = []
+                for j in range(dim[1]):
+                    row.append(1)
                     matrix.append(row)
 
                 self.value = matrix
                 self.shape = dim
-            else:
-                self.value = [[1 for _ in range(dim[1])] for _ in range(dim[0])]
-                self.shape = dim
+            #else:
+                #self.value = [[1 for _ in range(dim[1])] for _ in range(dim[0])]
+                #self.shape = dim
 
     """
     Print the matrix to screen
@@ -58,5 +58,5 @@ class Matrix(object):
                 string += "[" + str(self.value[i]) +"]\n  " if i < self.shape[0] - 1 else str(self.value[i]) + " "
         return string
 
-mat = Matrix(dim=(3, 8))
+mat = Matrix(dim=(10, 10))
 print(mat)
