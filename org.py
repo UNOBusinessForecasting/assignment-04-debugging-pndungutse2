@@ -14,7 +14,7 @@ class Matrix(object):
                     lenInner = len(value[0])
                     for row in value:
                         if len(row) != lenInner:
-                            raise RuntimeError("Matrix is invalid. Please ensure that all rows have uniform length.")
+                            raise RuntimeError("Matrix is invalid. Please  ensure that all rows have uniform length.")
                         for elem in row:
                             if not isinstance(elem, (int, float)):
                                 raise RuntimeError("Matrix is invalid. Please ensure that all elements are numeric (either float or int).")
